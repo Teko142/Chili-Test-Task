@@ -22,7 +22,8 @@ struct GIFController : UIViewControllerRepresentable {
         let controller = GiphyViewController()
         controller.mediaTypeConfig = [.emoji,.gifs,.stickers]
         controller.delegate = context.coordinator
-        
+        // Full Screen
+        GiphyViewController.trayHeightMultiplier = 1.05
         return controller
     }
     
@@ -43,7 +44,7 @@ struct GIFController : UIViewControllerRepresentable {
         }
         
         func didSelectMedia(giphyViewController: GiphyViewController, media: GPHMedia) {
-            
+            // Retreving url
             let url = media.url(rendition: .fixedWidth, fileType: .gif)
             parent.url = url ?? ""
             parent.present.toggle()

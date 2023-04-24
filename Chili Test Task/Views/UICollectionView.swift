@@ -8,8 +8,11 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct HomeView: View {
+struct UICollectionView: View {
+    @State private var isLoading = false
+    // Gif data
     @State var gifData : [String] = []
+    // Gif Controller
     @State var present = false
     @State var url = ""
     var body: some View {
@@ -20,11 +23,10 @@ struct HomeView: View {
                 
                 HStack {
                     Spacer(minLength: 0)
-                    
+                    // Animated Image will download GIF
                     AnimatedImage(url: URL(string: url)!)
-                        .resizable()
-                        .frame(width: UIScreen.main.bounds.width - 100, height: 200)
-                        .cornerRadius(15)
+                        .aspectRatio(contentMode: .fit)
+                        .clipShape(CustomShape())
                 }
                 .padding()
             }
@@ -40,15 +42,37 @@ struct HomeView: View {
                         )
                 }
             }
+            
+            if isLoading {
+                ZStack {
+                    Color(.systemBackground)
+                        .ignoresSafeArea()
+                        .opacity(0.8)
+                }
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                    .scaleEffect(3)
+            }
         }
+        .onAppear{startFakeNetworkCall()}
         .fullScreenCover(isPresented: $present, content: {
             GIFController(url: $url, present: $present)
         })
+        
+        
     }
+    
+    func startFakeNetworkCall() {
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isLoading = false
+        }
+    }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        UICollectionView()
     }
 }

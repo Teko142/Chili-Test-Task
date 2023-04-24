@@ -13,8 +13,9 @@
 		1A105C3829E9820400C92D18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A105C3729E9820400C92D18 /* Assets.xcassets */; };
 		1A105C3B29E9820400C92D18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A105C3A29E9820400C92D18 /* Preview Assets.xcassets */; };
 		1A105C4329E983F800C92D18 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1A105C4229E983F800C92D18 /* SDWebImageSwiftUI */; };
-		1A105C4629E9845600C92D18 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A105C4529E9845600C92D18 /* HomeView.swift */; };
+		1A105C4629E9845600C92D18 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A105C4529E9845600C92D18 /* UICollectionView.swift */; };
 		1A105C4829E9856F00C92D18 /* GIFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A105C4729E9856F00C92D18 /* GIFController.swift */; };
+		1A1DA1D129EDF6AC00471D79 /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1DA1D029EDF6AC00471D79 /* CustomShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +24,9 @@
 		1A105C3529E9820200C92D18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A105C3729E9820400C92D18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A105C3A29E9820400C92D18 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1A105C4529E9845600C92D18 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1A105C4529E9845600C92D18 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		1A105C4729E9856F00C92D18 /* GIFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFController.swift; sourceTree = "<group>"; };
+		1A1DA1D029EDF6AC00471D79 /* CustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
 		2A9E3F4563652A73D84EF5BC /* Pods_Chili_Test_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chili_Test_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4958DABCD6336738732F421E /* Pods-Chili Test Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chili Test Task.debug.xcconfig"; path = "Target Support Files/Pods-Chili Test Task/Pods-Chili Test Task.debug.xcconfig"; sourceTree = "<group>"; };
 		E2F8B024DB125E04E6EEBDCE /* Pods-Chili Test Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chili Test Task.release.xcconfig"; path = "Target Support Files/Pods-Chili Test Task/Pods-Chili Test Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,8 +86,9 @@
 		1A105C4429E9844700C92D18 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1A105C4529E9845600C92D18 /* HomeView.swift */,
+				1A105C4529E9845600C92D18 /* UICollectionView.swift */,
 				1A105C4729E9856F00C92D18 /* GIFController.swift */,
+				1A1DA1D029EDF6AC00471D79 /* CustomShape.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,8 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1DA1D129EDF6AC00471D79 /* CustomShape.swift in Sources */,
 				1A105C4829E9856F00C92D18 /* GIFController.swift in Sources */,
-				1A105C4629E9845600C92D18 /* HomeView.swift in Sources */,
+				1A105C4629E9845600C92D18 /* UICollectionView.swift in Sources */,
 				1A105C3629E9820200C92D18 /* ContentView.swift in Sources */,
 				1A105C3429E9820200C92D18 /* Chili_Test_TaskApp.swift in Sources */,
 			);
