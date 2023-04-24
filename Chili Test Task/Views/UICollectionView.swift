@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct UICollectionView: View {
-    @State private var isLoading = false
+    @State private var isLoading = true
     // Gif data
     @State var gifData : [String] = []
     // Gif Controller
@@ -17,48 +17,52 @@ struct UICollectionView: View {
     @State var url = ""
     var body: some View {
         
-        ScrollView(.vertical, showsIndicators: false) {
+        if !isLoading {
             
-            ForEach(gifData, id: \.self) { url in
+            ScrollView(.vertical, showsIndicators: false) {
                 
-                HStack {
-                    Spacer(minLength: 0)
-                    // Animated Image will download GIF
-                    AnimatedImage(url: URL(string: url)!)
-                        .aspectRatio(contentMode: .fit)
-                        .clipShape(CustomShape())
+                ForEach(gifData, id: \.self) { url in
+                    
+                    HStack {
+                        Spacer(minLength: 0)
+                        // Animated Image will download GIF
+                        AnimatedImage(url: URL(string: url)!)
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(CustomShape())
+                    }
+                    .padding()
                 }
-                .padding()
-            }
-            .onChange(of: url) { value in
-                self.gifData.append(value)
-            }
-            .navigationTitle("GIF's")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                Button(action: {present.toggle()}) {
-                    Image(systemName: "rectangle.and.pencil.and.ellipsis")
-                        .font(.title
-                        )
+                .onChange(of: url) { value in
+                    self.gifData.append(value)
                 }
+                .navigationTitle("GIF's")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    Button(action: {present.toggle()}) {
+                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                            .font(.title
+                            )
+                    }
+                }
+                
             }
+            .fullScreenCover(isPresented: $present, content: {
+                GIFController(url: $url, present: $present)
+            })
             
-            if isLoading {
-                ZStack {
-                    Color(.systemBackground)
-                        .ignoresSafeArea()
-                        .opacity(0.8)
-                }
+        } else if isLoading {
+            ZStack {
+                
+                Color(.systemBackground)
+                    .ignoresSafeArea()
+                    .opacity(0.8)
+                    .onAppear{startFakeNetworkCall()}
+
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                     .scaleEffect(3)
             }
         }
-        .onAppear{startFakeNetworkCall()}
-        .fullScreenCover(isPresented: $present, content: {
-            GIFController(url: $url, present: $present)
-        })
-        
         
     }
     
