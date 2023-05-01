@@ -5,6 +5,11 @@
 //  Created by Артур Олехно on 14/04/2023.
 //
 
+// I didn't add RxSwift/Combine. At the moment it is difficult for me.
+// To implement Giphy SDK I used this video as a tutorial - https://www.youtube.com/watch?v=pOYomjaAOBU&t=4s&ab_channel=Kavsoft
+// To implement a loading indicator I used this video as a tutorial - https://www.youtube.com/watch?v=pOYomjaAOBU&t=4s&ab_channel=Kavsoft
+// To understand how Unit Tests work I used this video as a guide - https://www.youtube.com/watch?v=vfCm6zCHv44&t=388s&ab_channel=Indently
+
 import SwiftUI
 import SDWebImageSwiftUI
 struct UICollectionView: View {
