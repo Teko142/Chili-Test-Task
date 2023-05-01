@@ -7,9 +7,8 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
-
 struct UICollectionView: View {
-    @State private var isLoading = true
+    @State public var isLoading = true
     // Gif data
     @State var gifData : [String] = []
     // Gif Controller
@@ -28,7 +27,7 @@ struct UICollectionView: View {
                         // Animated Image will download GIF
                         AnimatedImage(url: URL(string: url)!)
                             .aspectRatio(contentMode: .fit)
-                            .clipShape(CustomShape())
+                            .clipShape(CustomShape())                        
                     }
                     .padding()
                 }
@@ -66,7 +65,7 @@ struct UICollectionView: View {
         
     }
     
-    func startFakeNetworkCall() {
+    public func startFakeNetworkCall() {
         isLoading = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             isLoading = false

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CustomShape : Shape {
     func path(in rect: CGRect) -> Path {
-        
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight, .bottomLeft], cornerRadii: CGSize())
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight, .bottomLeft], cornerRadii: .zero)
         return Path(path.cgPath)
     }
+
 }
