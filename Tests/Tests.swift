@@ -5,6 +5,9 @@
 //  Created by Артур Олехно on 26/04/2023.
 //
 
+// Unit testing is new to me. At the moment I don't understand how and what blocks of code should be tested.
+// At the moment, my second test is not successful.
+
 import XCTest
 import SwiftUI
 final class Tests: XCTestCase {
